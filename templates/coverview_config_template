@@ -1,0 +1,6 @@
+{
+	"duplicates": true,
+	"outputs": { "regions": true, "profiles": true },
+	"low_bq": 10,
+	"low_mq": 20,
+	"fail": { "MIN_MINQCOV": 15 },
