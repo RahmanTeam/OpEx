@@ -12,7 +12,7 @@ opexdir=$(pwd)
 # Download BWA
 message "Downloading BWA" 
 cd tools
-wget http://sourceforge.net/projects/bio-bwa/files/bwa-0.5.10.tar.bz2
+wget http://sourceforge.net/projects/bio-bwa/files/bwa-0.5.10.tar.bz2 --no-check-certificate
 tar -jxvf bwa-0.5.10.tar.bz2
 rm bwa-0.5.10.tar.bz2; echo
 
@@ -24,7 +24,7 @@ rm stampy-v1.0.14.1.tgz; echo
 
 # Download Picard
 message "Downloading Picard"
-wget http://sourceforge.net/projects/picard/files/picard-tools/1.48/picard-tools-1.48.zip
+wget http://sourceforge.net/projects/picard/files/picard-tools/1.48/picard-tools-1.48.zip --no-check-certificate
 unzip picard-tools-1.48.zip
 rm picard-tools-1.48.zip; echo
 
@@ -33,14 +33,7 @@ message "Downloading Platypus"
 wget http://www.well.ox.ac.uk/bioinformatics/Software/Platypus_0.1.5.tgz
 tar zxvf Platypus_0.1.5.tgz
 mv PlatypusRelease/ Platypus-0.1.5
-rm Platypus_0.1.5.tgz; echo
-
-# Download CAVA
-message "Downloading CAVA"
-wget http://www.well.ox.ac.uk/bioinformatics/Software/cava-v1.1.1-lite.tgz
-tar zxvf cava-v1.1.1-lite.tgz
-rm cava-v1.1.1-lite.tgz
-cd ..; echo
+rm Platypus_0.1.5.tgz; cd ..; echo
 
 # Download transcript database
 message "Downloading transcript database"
@@ -65,6 +58,10 @@ cd tools/Platypus-0.1.5; python setup.py build; echo
 mkdir $opexdir/Platypus
 python setup.py install --prefix $opexdir/Platypus; cd ../..
 echo -e "import sys\nsys.path.insert(1, '"$opexdir"/Platypus/lib/python2.7/site-packages')" > usercustomize.py
+
+# Build Pysam 0.7.7
+message "Building Pysam"
+./install_pysam.sh
 
 mkdir tmp
 

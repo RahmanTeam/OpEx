@@ -1,0 +1,30 @@
+##fileformat=VCFv4.0
+##fileDate=2016-06-14
+##source=Platypus_Version_0.1.5
+##platypusOptions={'useCortex': 0, 'bamFiles': ['test_picard.bam'], 'labels': None, 'refFile': '/scratch/DGE/GENSUSC/gst/REF/human_g1k_v37.fasta', 'maxHaplotypes': 256, 'maxSize': 250, 'parseNCBI': 0, 'ploidy': 2, 'nCPU': 1, 'minFlank': 3, 'bufferSize': 1000000, 'logFileName': 'test_platypus_log.txt', 'regions': None, 'processRegionSize': 30000000, 'maxVariants': 8, 'maxReads': 5000000, 'badReadsWindow': 11, 'genIndels': 1, 'minReads': 2, 'abThreshold': 0.001, 'dataType': 'population', 'minMapQual': 20, 'rlen': 150, 'minGoodQualBases': 20, 'printVarsAndExit': 0, 'maxBadQualBases': 20, 'minBaseQual': 20, 'getVariantsFromBAMs': 1, 'genSNPs': 1, 'minPosterior': 5, 'strandFilter': 0, 'verbosity': 2, 'sourceFile': None, 'callOnlyIndels': 0, 'badReadsThreshold': 15, 'nInd': 1, 'sbThreshold': 0.01, 'output': 'test_calls.vcf', 'freqAsPrior': 0}
+##INFO=<ID=FR,Number=0,Type=Float,Description="Estimated population frequency">
+##INFO=<ID=RPV,Number=0,Type=Float,Description="Median minimum base quality for bases around variant">
+##INFO=<ID=RPV,Number=0,Type=Float,Description="Reverse strand p-value">
+##INFO=<ID=TCR,Number=0,Type=Integer,Description="Total reverse strand coverage at this locus">
+##INFO=<ID=HP,Number=1,Type=Integer,Description="Homopolmer run length">
+##INFO=<ID=ABPV,Number=0,Type=Float,Description="Allele-bias p-value. Testing for low variant coverage">
+##INFO=<ID=TR,Number=0,Type=Integer,Description="Total number of reads containing this variant">
+##INFO=<ID=PP,Number=0,Type=Float,Description="Posterior probability (phred scaled) that this variant segregates">
+##INFO=<ID=NF,Number=0,Type=Integer,Description="Total number of forward reads containing this variant">
+##INFO=<ID=SC,Number=1,Type=String,Description="Genomic sequence 10 bases either side of variant position">
+##INFO=<ID=FPV,Number=0,Type=Float,Description="Forward strand p-value">
+##INFO=<ID=TCF,Number=0,Type=Integer,Description="Total forward strand coverage at this locus">
+##INFO=<ID=NR,Number=0,Type=Integer,Description="Total number of reverse reads containing this variant">
+##INFO=<ID=RMP,Number=0,Type=Float,Description="RMS Position in reads of Variant">
+##INFO=<ID=TC,Number=0,Type=Integer,Description="Total coverage at this locus">
+##FILTER=<ID=sb,Description="Variant fails strand-bias filter">
+##FILTER=<ID=ab,Description="Variant fails allele-bias filter">
+##FILTER=<ID=badReads,Description="Variant supported only by reads with low quality bases close to variant position, and not present on both strands.">
+##FILTER=<ID=hp10,Description="Flanking sequence contains homopolymer of length 10 or greater">
+##FORMAT=<ID=GL,Number=.,Type=Float,Description="Genotype log-likelihoods (log10) for AA,AB and BB genotypes, where A = ref and B = variant. Only applicable for bi-allelic sites">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Unphased genotypes">
+##FORMAT=<ID=NR,Number=1,Type=Integer,Description="Number of reads covering variant in this sample">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype quality, as Phred score">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	test_picard.bam
+13	32929232	.	A	G	200	PASS	ABPV=1.00e+00;FPV=7.21e-01;FR=0.5000;HP=2;MMLQ=35;NF=14;NR=5;PP=200;RMP=50.12;RPV=3.87e-01;SC=AAACTAAATCACATTTTCACA;TC=38;TCF=26;TCR=12;TR=19	GT:GL:GQ:NR	1/0:-174.79,-30.88,-156.0:100:38
+13	32929387	.	T	C	200	PASS	ABPV=1.00e+00;FPV=7.62e-33;FR=1.0000;HP=1;MMLQ=34;NF=11;NR=47;PP=200;RMP=64.01;RPV=8.64e-02;SC=AATCAAGCAGTAGCTGTAACT;TC=80;TCF=31;TCR=49;TR=58	GT:GL:GQ:NR	1/1:-506.12,-86.17,-48.79:100:80

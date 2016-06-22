@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Last updated: 23.03.2015
+Last updated: 15.06.2016
 """
 
 from optparse import OptionParser
@@ -29,9 +29,9 @@ else:
 	refdir=''
 
 # Print welcome message
-print '\n--------------------------------------'
+print '\n-----------------------------------------'
 print ' INSTALLING OPEX PIPELINE VERSION '+ver
-print '--------------------------------------'
+print '-----------------------------------------'
 
 # Call build_opex.sh script
 print '\n---------------------------------------------------------------------------------'
@@ -82,12 +82,13 @@ if not options.reference is None:
 	config.write('GENOME_INDEX = '+scriptdir+'/index/ref\n')
 	config.write('HASH = '+scriptdir+'/index/ref\n')
 else:
-	print '\n--------------------------------------'
-	print 'Referemce genome must be added later.'
-	print '--------------------------------------'
+	print '\n-----------------------------------------'
+	print '!!! Referemce genome must be added later.'
+	print '-----------------------------------------'
 	
 # Close config file and print goodbye message
 config.close()
-print '\n------------------------------------------------'
-print ' OPEX PIPELINE v'+ver+' SUCCESSFULLY INSTALLED.'
-print '------------------------------------------------\n'
+print '\n---------------------------------------------------'
+print ' OPEX PIPELINE v'+ver+' INSTALLATION COMPLETED.'
+if not options.reference is None: print ' Test installation: python test_installation.py'
+print '---------------------------------------------------\n'
