@@ -8,7 +8,7 @@ OpEx runs on Linux. It requires Python 2.7.3 or later (< Python 3) with Numpy ve
 2 INSTALLATION GUIDE
 =====================
 
-OpEx can be downloaded from http://www.icr.ac.uk/opex.
+OpEx can be downloaded from https://github.com/RahmanTeam/OpEx/releases
 
 To install OpEx, unpack the tgz file and run the installation script (install.py) in the opex-v1.0.0 directory (see details below).
 
